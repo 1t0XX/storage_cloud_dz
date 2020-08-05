@@ -1,0 +1,31 @@
+# перейдем в папку с PostgreSQL
+> cd c:\Program Files\PostgreSQL\12\bin
+
+# запустим консольного клиента под пользователем postgres
+> psql –U postgres
+
+# создадим БД pagila (аналог sakila для MySQL)
+# pagila, sakila – БД проката DVD дисков с фильмами
+postgres=# create database pagila;
+
+# выведем список БД
+postgres=# \l
+
+# выйдем из консольного клиента
+postgres=# \q
+
+# развернем схему БД pagila
+> psql -U postgres -d pagila -f "F:\work\_GB\DB old\pagila\pagila-schema.sql"
+
+# переключимся на БД pagila
+postgres=# \c pagila
+
+# выведем список таблиц текущей БД
+postgres=# \dt
+
+# справка по командам
+postgres=# \?
+
+# развернем дамп БД pagila
+> psql -U postgres -d pagila -f "F:\work\_GB\DB old\pagila\pagila-insert-data.sql"
+
